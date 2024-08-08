@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.asm2f.ui.fragment.MovieFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/genresFragment"
+        android:name="com.example.asm2f.ui.fragment.GenresFragment"
+        android:label="Genres"
+        tools:layout="@layout/fragment_genres" >
+
+        <action
+            android:id="@+id/action_genresFragment_to_genresOfMovieFragment"
+            app:destination="@id/genresOfMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.asm2f.ui.fragment.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <argument
+            android:name="searchId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchFragment_to_MovieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/genresOfMovieFragment"
+        android:name="com.example.asm2f.ui.fragment.GenresOfMovieFragment"
+        android:label="fragment_genres_of_movie"
+        tools:layout="@layout/fragment_genres_of_movie" >
+        <argument
+            android:name="genreId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_genresOfMovieFragment_to_MovieDetailFragment"
+            app:destination="@+id/movieDetailFragment"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.asm2f.ui.fragment.MovieDetailFragment"
+        android:label="MovieDetailFragment">
+
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

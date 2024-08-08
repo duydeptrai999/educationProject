@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.SearchFragment">
+
+<!--        <data>-->
+<!--            <variable-->
+<!--                name="viewModel"-->
+<!--                type="com.example.asm2f.ui.fragment.SearchViewModel" />-->
+<!--        </data>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search for a movie"
+                    android:imeOptions="actionSearch"
+                    tools:ignore="MissingConstraints" />
+
+
+                <ImageView
+                    android:id="@+id/searchButton"
+                    android:layout_width="65dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="289dp"
+                    android:layout_toRightOf="@+id/searchEditText"
+                    android:src="@drawable/baseline_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/searchEditText"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/moviesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/searchÌnormation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="dont have information you wanna search"
+                android:visibility="invisible"
+                tools:ignore="MissingConstraints" />
+
+
+        </LinearLayout>
+</FrameLayout>
